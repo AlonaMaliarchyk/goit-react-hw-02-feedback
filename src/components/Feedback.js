@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 // import css from './Feedback.module.css';
-import FeedbackOptions from './FeedbackOptions/FeedbackBtns';
+import FeedbackOptions from './FeedbackOptions';
 import Statistics from "./Statistics/Statistics";
-import SectionTitle from "./SectionTitle/SectionTitle";
-import Notification from "./Notification/Notification";
+import SectionTitle from "./SectionTitle";
+import Notification from "./Notification";
+import css from './Feedback.module.css'
 
 class Feedback extends React.Component {
-     
     static defaultProps = {
         InitialGood: 0,
         InitialNeutral: 0,
@@ -15,15 +15,15 @@ class Feedback extends React.Component {
     }
 
     static protoTypes = {
-    title: PropTypes.string.isRequired,
-    state: PropTypes.object.isRequired
+        title: PropTypes.string.isRequired,
+        state: PropTypes.object.isRequired
     }
     
     state = {
-            good: this.props.InitialGood,
-            neutral: this.props.InitialNeutral,
-            bad: this.props.InitialBad
-        }
+        good: this.props.InitialGood,
+        neutral: this.props.InitialNeutral,
+        bad: this.props.InitialBad
+    }
 
     handlBtnGood = () => {
         this.setState(prevState => ({
@@ -60,7 +60,7 @@ class Feedback extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={css.wrap}>
             <SectionTitle title="Please leave feedback">
                 <FeedbackOptions
                     handlBtnGood={this.handlBtnGood}                    

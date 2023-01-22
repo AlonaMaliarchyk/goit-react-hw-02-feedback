@@ -10,8 +10,8 @@ const state = {
     }
 
   return (
-     <Feedback
-       title={title}
-       state={state} />
+    <Feedback
+      title={title}
+      state={state} />
   );
 };
