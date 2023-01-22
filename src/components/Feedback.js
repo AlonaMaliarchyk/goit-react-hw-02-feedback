@@ -29,21 +29,18 @@ class Feedback extends React.Component {
         this.setState(prevState => ({
                 good: prevState.good + 1,
         }));
-        console.log(this.state);
     }
 
     handlBtnNeutral = () => {
         this.setState(prevState => ({
                 neutral: prevState.neutral + 1,
         }));
-        console.log(this.state)
     }
 
     handlBtnBad = () => {
         this.setState(prevState => ({
                 bad: prevState.bad + 1,
         }));
-        console.log(this.state)
     }
 
     calcTotal() {
